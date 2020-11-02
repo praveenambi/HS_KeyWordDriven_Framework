@@ -102,13 +102,55 @@ public class KeyWordEngine {
 
 				switch (locatorType) {
 				case "id":
-
 					webelement = driver.findElement(By.id(locatorValue));
 					if (action.equalsIgnoreCase("sendkeys")) {
 						webelement.clear();
 						webelement.sendKeys(value);
 					}else if (action.equalsIgnoreCase("click")) {
 						webelement.click();
+					}else if (action.equalsIgnoreCase("isDisplayed")) {
+						webelement.isDisplayed();
+						
+					}else if (action.equalsIgnoreCase("getText")) {
+						String element_text = webelement.getText();
+						System.out.println("The element text is  "+ element_text);
+						
+					}
+					locatorType=null;
+					break;
+					
+					
+				case "name":
+					webelement = driver.findElement(By.name(locatorValue));
+					if (action.equalsIgnoreCase("sendkeys")) {
+						webelement.clear();
+						webelement.sendKeys(value);
+					}else if (action.equalsIgnoreCase("click")) {
+						webelement.click();
+					}else if (action.equalsIgnoreCase("isDisplayed")) {
+						webelement.isDisplayed();
+						
+					}else if (action.equalsIgnoreCase("getText")) {
+						String element_text = webelement.getText();
+						System.out.println("The element text is  "+ element_text);
+					}
+					locatorType=null;
+					break;
+					
+				case "xpath":
+					webelement = driver.findElement(By.xpath(locatorValue));
+					if (action.equalsIgnoreCase("sendkeys")) {
+						webelement.clear();
+						webelement.sendKeys(value);
+					}else if (action.equalsIgnoreCase("click")) {
+						webelement.click();
+					}else if (action.equalsIgnoreCase("isDisplayed")) {
+						webelement.isDisplayed();
+						
+					}else if (action.equalsIgnoreCase("getText")) {
+						String element_text = webelement.getText();
+						System.out.println("The element text is  "+ element_text);
+						
 					}
 					locatorType=null;
 					break;
@@ -116,7 +158,58 @@ public class KeyWordEngine {
 
 				case "linkText":
 					webelement = driver.findElement(By.linkText(locatorValue));
-					webelement.click();
+					if (action.equalsIgnoreCase("sendkeys")) {
+						webelement.clear();
+						webelement.sendKeys(value);
+					}else if (action.equalsIgnoreCase("click")) {
+						webelement.click();
+					}else if (action.equalsIgnoreCase("isDisplayed")) {
+						webelement.isDisplayed();
+						
+					}else if (action.equalsIgnoreCase("getText")) {
+						String element_text = webelement.getText();
+						System.out.println("The element text is  "+ element_text);
+						
+					}
+					locatorType=null;
+					break;
+					
+				case "className":
+					webelement = driver.findElement(By.className(locatorValue));
+					if (action.equalsIgnoreCase("sendkeys")) {
+						webelement.clear();
+						webelement.sendKeys(value);
+					}else if (action.equalsIgnoreCase("click")) {
+						webelement.click();
+					}else if (action.equalsIgnoreCase("isDisplayed")) {
+						webelement.isDisplayed();
+						
+					}else if (action.equalsIgnoreCase("getText")) {
+						String element_text = webelement.getText();
+						System.out.println("The element text is  "+ element_text);
+						
+					}
+					locatorType=null;
+					break;
+				
+				case "cssSelector":
+					webelement = driver.findElement(By.cssSelector(locatorValue));
+					if (action.equalsIgnoreCase("sendkeys")) {
+						webelement.clear();
+						webelement.sendKeys(value);
+					}else if (action.equalsIgnoreCase("click")) {
+						webelement.click();
+					}else if (action.equalsIgnoreCase("isDisplayed")) {
+						webelement.isDisplayed();
+						
+					}else if (action.equalsIgnoreCase("getText")) {
+						String element_text = webelement.getText();
+						System.out.println("The element text is  "+ element_text);
+						
+					}
+					locatorType=null;
+					break;
+
 
 				default:
 					break;
