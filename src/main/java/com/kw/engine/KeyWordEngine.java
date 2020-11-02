@@ -36,8 +36,8 @@ public class KeyWordEngine {
 	public BasePage basepage;
 	public WebElement webelement;
 	public WebDriverWait explicitwait ;
-	
-	
+
+
 
 	public final String scenario_sheet_path = "C:\\Users\\PRAAMBI\\eclipse-workspace\\KeywordDriven_HubSpot\\src\\main\\java\\com\\kw\\scenarios\\auto_scenarios.xlsx";
 
@@ -102,7 +102,7 @@ public class KeyWordEngine {
 
 				switch (locatorType) {
 				case "id":
-					
+
 					webelement = driver.findElement(By.id(locatorValue));
 					if (action.equalsIgnoreCase("sendkeys")) {
 						webelement.clear();
