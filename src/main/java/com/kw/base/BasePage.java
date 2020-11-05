@@ -18,7 +18,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * @author PRAAMBI
  * This is the Base class where ,
- * the driver intialise and configuration properties are defines
+ * the driver initialize and configuration properties are defined
  */
 public class BasePage {
 
@@ -26,7 +26,7 @@ public class BasePage {
 	public Properties props;
 
 
-	public WebDriver  init_driver(String  browserName) {
+	public WebDriver init_driver(String  browserName) {
 
 		if (browserName.equals("chrome")) {
 			WebDriverManager.chromedriver().version("86").setup();
@@ -34,13 +34,10 @@ public class BasePage {
 				ChromeOptions options  = new ChromeOptions();
 				options.addArguments("--headless");
 				driver = new ChromeDriver(options);
-
 			}
 			else {
 				driver= new ChromeDriver();
-
 			}
-
 		}
 
 		if (browserName.equals("firefox")) {
@@ -48,24 +45,19 @@ public class BasePage {
 			driver = new FirefoxDriver();
 		}
 		return driver;
-
 	}
 
 	public Properties init_properties() {
-
 		props = new Properties();
 		FileInputStream file;
 		try {
-
 			file = new FileInputStream("C:\\Users\\PRAAMBI\\eclipse-workspace\\KeywordDriven_HubSpot\\src\\main\\java\\com\\kw\\config\\config.properties");
 			try {
 				props.load(file);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return props;
